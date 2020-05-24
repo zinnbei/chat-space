@@ -31,7 +31,7 @@
 ### Association
 - belongs_to :group
 - belongs_to :user
-a
+
 ## messages
 
 |Column|Type|Options|
