@@ -7,17 +7,19 @@
 |pssword|string|null: false|
 
 ### Association
-- has_many :group, through: :groups_users
+- has_many :groups, through: :groups_users
 - has_many :messages
+- has_many :groups_users
 
-## group
+## groups
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false|
+|name|string|null: false|
 
 ### Association
 - has_many :user, through: :groups_users
 - has_many :messages
+- has_many :groups_users
 
 ## groups_usersテーブル
 
@@ -27,18 +29,18 @@
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :group
+- belongs_to :groups
 - belongs_to :user
-
+a
 ## messages
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false|
+|body|text| 
 |image|string| |
 |group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :group
+- belongs_to :groups
 - belongs_to :user
