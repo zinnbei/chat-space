@@ -1,0 +1,29 @@
+.chat-main
+  .chat-main__group-info
+    .info-left
+      .info-left__main
+        test
+      .info-left__sub
+        Member : masa
+    .info-rights
+      = link_to "#" , class:"edit-btn" do
+        .info-right__edit
+          Edit
+  .chat-main__message-list
+    .message-list__name
+      masa 
+      %a 2019/11/20(Wed) 17:43:01
+    .message-list__text
+      おはよう！
+    .message-list__name
+      masa 
+      %a 2019/11/20(Wed) 17:43:34
+    .message-list__text
+      今日は夜から雨      
+  .chat-main__message-form
+    .message-form__type
+      %input.type-left{:placeholder => "type a message", :type => "text"}
+      %label{class: "type-right"}
+        = icon('fas', 'image',)
+        %input{type: "file",class: "type-right__file"}
+    %input.message-form__send{:type => "submit", :name => "btn", :value => "Send"}
