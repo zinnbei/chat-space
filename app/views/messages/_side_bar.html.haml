@@ -4,23 +4,16 @@
       .top-items__name
         = current_user.name
       .top-items__icons
-        = link_to "#" , class:"side-icon"do
+        = link_to new_group_path , class:"side-icon"do
           %i.fa.fa-edit
         = link_to edit_user_path(current_user) , class:"side-icon"do
           %i.fa.fa-cog
   .side-bar__group-list
-    .group-room
-      .group-room__name
-        techcamp
-      .group-room__notice
-        まだメッセージがありません
-    .group-room
-      .group-room__name
-        techcamp
-      .group-room__notice
-        まだメッセージがありません
-    .group-room
-      .group-room__name
-        techcamp
-      .group-room__notice
-        まだメッセージがありません
+    - current_user.groups.each do |group|
+      .group
+        = link_to '#' do
+          .group-room__name
+            = group.name
+          .group-room__notice
+            まだメッセージがありません
+ 
