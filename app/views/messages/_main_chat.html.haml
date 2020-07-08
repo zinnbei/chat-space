@@ -22,8 +22,10 @@
       今日は夜から雨      
   .chat-main__message-form
     .message-form__type
-      %input.type-left{:placeholder => "type a message", :type => "text"}
-      %label{class: "type-right"}
-        = icon('fas', 'image',)
-        %input{type: "file",class: "type-right__file"}
-    %input.message-form__send{:type => "submit", :name => "btn", :value => "Send"}
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'type-left', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'type-right' do
+            = icon('fas', 'image', class: 'icon')
+            = f.file_field :image, class: 'type-right__file'
+        = f.submit 'Send', class: 'message-from__send'
